@@ -14,7 +14,7 @@ public class FirstConnect {
         String response = koneksisaya.getResponseFromHttpUrl(myAddress);
         System.out.println(response);
 
-        // Decoding JSON
+
         assert response != null;
         JSONArray responseJSON = new JSONArray(response);
         ArrayList<ResponModel> responModel = new ArrayList<>();
@@ -34,7 +34,7 @@ public class FirstConnect {
             System.out.println("COMMENTS : " + responModel.get(ind).getComment());
         }
 
-        // Sorting data using Selection Sort
+
         selectionSort(responModel);
 
         System.out.println("Response After Sorting: ");
@@ -44,15 +44,15 @@ public class FirstConnect {
             System.out.println("COMMENTS : " + responModel.get(ind).getComment());
         }
 
-        // Get user input for rating search
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the rating you want to search: ");
         int searchRating = scanner.nextInt();
 
-        // Perform rating search
+
         ArrayList<ResponModel> searchResults = searchByRating(responModel, searchRating);
 
-        // Display search results
+
         System.out.println("Search Results for Rating " + searchRating + ": ");
         if (searchResults.isEmpty()) {
             System.out.println("No results found.");
